@@ -10,31 +10,46 @@ const Hero = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
 
   useGSAP(() => {
-    const heroSplit = new SplitText(".title", { type: "chars, words" });
-    const paragraghSplit = new SplitText(".subtitle", { type: "lines" });
+    // Wait for fonts to load before initializing SplitText
+    const initializeSplitText = () => {
+      const heroSplit = new SplitText(".title", { type: "chars, words" });
+      const paragraghSplit = new SplitText(".subtitle", { type: "lines" });
 
-    heroSplit.chars.forEach((char) => char.classList.add("text-gradient"));
+      heroSplit.chars.forEach((char) => char.classList.add("text-gradient"));
 
-    gsap.from(heroSplit.chars, {
-      yPercent: 100,
-      duration: 1.8,
-      ease: "expo.out",
-      stagger: 0.06,
-    });
+      gsap.from(heroSplit.chars, {
+        yPercent: 100,
+        duration: 1.8,
+        ease: "expo.out",
+        stagger: 0.06,
+      });
 
-    gsap.from(paragraghSplit.lines, {
-      opacity: 0,
-      yPercent: 100,
-      duration: 1.8,
-      ease: "expo.out",
-      stagger: 0.06,
-      delay: 1,
-    });
+      gsap.from(paragraghSplit.lines, {
+        opacity: 0,
+        yPercent: 100,
+        duration: 1.8,
+        ease: "expo.out",
+        stagger: 0.06,
+        delay: 1,
+      });
+    };
+
+    // Check if fonts are already loaded
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(() => {
+        initializeSplitText();
+      });
+    } else {
+      // Fallback for browsers that don't support document.fonts
+      setTimeout(() => {
+        initializeSplitText();
+      }, 100);
+    }
 
     gsap
       .timeline({
         scrollTrigger: {
-          trigger: "hero",
+          trigger: "#hero",
           start: "top top",
           end: "bottom top",
           scrub: true,
@@ -107,7 +122,7 @@ const Hero = () => {
           ref={videoRef}
           src="/videos/output.mp4"
           muted
-          playsinline
+          playsInline
           preload="auto"
         />
       </div>
