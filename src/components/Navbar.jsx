@@ -1,5 +1,5 @@
 import { gsap } from "gsap";
-import { navLinks } from "../../constants";
+import { navLinks } from "../../constants/index";
 import { useGSAP } from "@gsap/react";
 
 const Navbar = () => {
@@ -18,7 +18,7 @@ const Navbar = () => {
         backgroundColor: "#00000050",
         backgroundFilter: "blur(10px)",
         duration: 1,
-        ease: "power2.inOut",
+        ease: "power1.inOut",
       }
     );
   });
