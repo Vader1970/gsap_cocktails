@@ -201,12 +201,41 @@ body {
           @apply text-lg;
         }
 
-        div {
+        > div:not(.rating-section) {
           @apply flex flex-col justify-between md:gap-2 gap-5;
 
           span {
             @apply text-yellow font-bold text-5xl;
           }
+        }
+
+        /* Rating section responsive styles */
+        .rating-section {
+          @apply flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6;
+        }
+
+        .rating-content {
+          @apply flex flex-col items-start;
+        }
+
+        .stars {
+          @apply flex items-center gap-1 mb-2;
+        }
+
+        .profile-section {
+          @apply flex items-center gap-2;
+        }
+
+        .profile-images {
+          @apply flex -space-x-2;
+        }
+
+        .profile-img {
+          @apply w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-white object-cover;
+        }
+
+        .divider {
+          @apply w-px h-16 bg-gray-600 hidden sm:block;
         }
       }
     }
