@@ -311,7 +311,7 @@ body {
     }
 
     #m-right-leaf {
-      @apply object-contain absolute -top-40 right-0 md:w-fit w-1/4;
+      @apply object-contain absolute top-0 right-0 md:w-fit w-1/4;
     }
 
     .cocktail-tabs {
