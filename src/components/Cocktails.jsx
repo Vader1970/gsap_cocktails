@@ -29,7 +29,7 @@ const Cocktails = () => {
   });
 
   return (
-    <section id="cocktails" className="noisy">
+    <section id="cocktails">
       {/* Decorative leaf elements with parallax animation */}
       <img
         src="/images/cocktail-left-leaf.webp"
