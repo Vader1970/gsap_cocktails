@@ -5,52 +5,77 @@ import gsap from "gsap";
 
 const Contact = () => {
   useGSAP(() => {
-    const titleSplit = SplitText.create("#contact h2", { type: "words" });
+    // Wait for fonts to load before initializing SplitText
+    const initializeSplitText = () => {
+      const titleSplit = SplitText.create("#contact h2", { type: "words" });
 
-    const timeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: "#contact",
-        start: "top center",
-      },
-      ease: "power1.inOut",
-    });
+      // Set initial state to ensure elements are visible
+      gsap.set("#contact h3, #contact p", { opacity: 1 });
 
-    timeline
-      .from(titleSplit.words, {
-        opacity: 0,
-        yPercent: 100,
-        stagger: 0.02,
-      })
-      .from("#contact h3, #contact p", {
-        opacity: 0,
-        yPercent: 100,
-        stagger: 0.02,
-      })
-      .to("#f-right-leaf", {
-        y: "-50",
-        duration: 1,
+      const timeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#contact",
+          start: "top center",
+        },
         ease: "power1.inOut",
-      })
-      .to(
-        "#f-left-leaf",
-        {
+      });
+
+      timeline
+        .from(titleSplit.words, {
+          opacity: 0,
+          yPercent: 100,
+          stagger: 0.02,
+        })
+        .fromTo(
+          "#contact h3, #contact p",
+          {
+            opacity: 0,
+            yPercent: 100,
+          },
+          {
+            opacity: 1,
+            yPercent: 0,
+            stagger: 0.02,
+          }
+        )
+        .to("#f-right-leaf", {
           y: "-50",
           duration: 1,
           ease: "power1.inOut",
-        },
-        "<"
-      );
+        })
+        .to(
+          "#f-left-leaf",
+          {
+            y: "-50",
+            duration: 1,
+            ease: "power1.inOut",
+          },
+          "<"
+        );
+    };
+
+    // Check if fonts are already loaded
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(() => {
+        initializeSplitText();
+      });
+    } else {
+      // Fallback for browsers that don't support document.fonts
+      setTimeout(() => {
+        initializeSplitText();
+      }, 100);
+    }
   });
 
   return (
     <footer id="contact">
       <img
-        src="/images/footer-right-leaf.png"
+        src="/images/footer-right-leaf.webp"
         alt="leaf-right"
         id="f-right-leaf"
       />
       <img
-        src="/images/footer-left-leaf.png"
+        src="/images/footer-left-leaf.webp"
         alt="leaf-left"
         id="f-left-leaf"
       />

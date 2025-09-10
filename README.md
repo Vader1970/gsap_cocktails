@@ -1,12 +1,46 @@
-# React + Vite
+# GSAP Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, interactive landing page developed to showcase the power and capabilities of GSAP animations. This project demonstrates various GSAP animation techniques including timeline animations, scroll-triggered effects, and smooth transitions.
 
-Currently, two official plugins are available:
+## 🚀 Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React** - Modern JavaScript library for building user interfaces
+- **Vite** - Fast build tool and development server
+- **GSAP** - Professional-grade animation library for creating smooth, high-performance animations
+- **Tailwind CSS** - Utility-first CSS framework for rapid UI development
+- **CSS3** - Styling and responsive design
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Smooth scroll animations
+- Scroll-synced video playback
+- Cinematic animations and transitions
+- Interactive hover effects
+- Timeline-based animations
+- Responsive design
+- Modern UI/UX components
+- Performance-optimized animations
+
+## 🛠️ Development
+
+This project was built using React + Vite for fast development and hot module replacement, with GSAP providing the animation engine for creating engaging user experiences. Tailwind CSS is used for rapid styling and responsive design, while scroll-synced video playback creates immersive cinematic experiences.
+
+## 📦 Getting Started
+
+1. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+2. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+3. Open your browser and navigate to the local development URL
+
+## 🎯 Purpose
+
+This landing page serves as a demonstration of GSAP's animation capabilities, showcasing how modern web animations can enhance user experience and create engaging, interactive websites.

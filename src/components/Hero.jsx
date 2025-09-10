@@ -17,6 +17,13 @@ const Hero = () => {
 
       heroSplit.chars.forEach((char) => char.classList.add("text-gradient"));
 
+      // Remove any aria-label attributes that SplitText might add to p elements
+      paragraghSplit.lines.forEach((line) => {
+        if (line.hasAttribute("aria-label")) {
+          line.removeAttribute("aria-label");
+        }
+      });
+
       gsap.from(heroSplit.chars, {
         yPercent: 100,
         duration: 1.8,
@@ -85,13 +92,13 @@ const Hero = () => {
         <h1 className="title">MOJITO</h1>
 
         <img
-          src="/images/hero-left-leaf.png"
+          src="/images/hero-left-leaf.webp"
           alt="left-leaf"
           className="left-leaf"
         />
 
         <img
-          src="/images/hero-right-leaf.png"
+          src="/images/hero-right-leaf.webp"
           alt="right-leaf"
           className="right-leaf"
         />
