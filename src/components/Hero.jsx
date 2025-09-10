@@ -134,8 +134,8 @@ const Hero = () => {
 
   return (
     <>
-      {/* Main hero section with noise texture background */}
-      <section id="hero" className="noisy">
+      {/* Main hero section */}
+      <section id="hero">
         {/* Main title that animates with SplitText character-by-character */}
         <h1 className="title">MOJITO</h1>
 
@@ -159,7 +159,9 @@ const Hero = () => {
             <div className="space-y-5 hidden md:block">
               <p>Cool. Crisp. Classic.</p>
               <p className="subtitle">
-                Sip the Spirit <br /> of Summer
+                Sip the Spirit
+                <br />
+                of Summer
               </p>
             </div>
 

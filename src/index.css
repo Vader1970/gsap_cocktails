@@ -84,10 +84,6 @@ body {
     }
   }
 
-  .noisy {
-    @apply absolute inset-0 size-full bg-[url("/images/noise.webp")];
-  }
-
   #hero {
     @apply relative z-10 min-h-dvh w-full border border-transparent;
 

@@ -146,7 +146,6 @@ const About = () => {
       <div className="top-grid">
         {/* Left column - Small image */}
         <div className="md:col-span-3">
-          <div className="noisy" />
           <img
             src="/images/abt1.webp"
             alt="grid-img-1"
@@ -157,7 +156,6 @@ const About = () => {
 
         {/* Center column - Large image */}
         <div className="md:col-span-6">
-          <div className="noisy" />
           <img
             src="/images/abt2.webp"
             alt="grid-img-2"
@@ -168,7 +166,6 @@ const About = () => {
 
         {/* Right column - Small image with explicit dimensions */}
         <div className="md:col-span-3">
-          <div className="noisy" />
           <img
             src="/images/abt5.webp"
             alt="grid-img-5"
@@ -184,7 +181,6 @@ const About = () => {
       <div className="bottom-grid">
         {/* Left column - Large image with explicit dimensions */}
         <div className="md:col-span-8">
-          <div className="noisy" />
           <img
             src="/images/abt3.webp"
             alt="grid-img-3"
@@ -197,7 +193,6 @@ const About = () => {
 
         {/* Right column - Medium image */}
         <div className="md:col-span-4">
-          <div className="noisy" />
           <img
             src="/images/abt4.webp"
             alt="grid-img-4"
