@@ -134,8 +134,19 @@ const Hero = () => {
 
   return (
     <>
-      {/* Main hero section */}
-      <section id="hero">
+      {/* Main hero section with background video */}
+      <section id="hero" className="relative">
+        {/* Background video that plays based on scroll position */}
+        <div className="video absolute inset-0">
+          <video
+            ref={videoRef}
+            src="/videos/output.mp4"
+            muted
+            playsInline
+            preload="auto"
+          />
+        </div>
+
         {/* Main title that animates with SplitText character-by-character */}
         <h1 className="title">MOJITO</h1>
 
@@ -177,17 +188,6 @@ const Hero = () => {
           </div>
         </div>
       </section>
-
-      {/* Background video that plays based on scroll position */}
-      <div className="video absolute inset-0">
-        <video
-          ref={videoRef}
-          src="/videos/output.mp4"
-          muted
-          playsInline
-          preload="auto"
-        />
-      </div>
     </>
   );
 };

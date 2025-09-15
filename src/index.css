@@ -20,7 +20,7 @@ body {
   width: 100%;
   background-color: black;
   color: white;
-  scroll-behavior: smooth;
+  /* Removed scroll-behavior: smooth - ScrollSmoother handles this more effectively */
   overflow-x: hidden;
 }
 
@@ -62,6 +62,18 @@ body {
 @layer components {
   main {
     @apply w-full overflow-x-hidden;
+  }
+
+  /* ScrollSmoother optimization styles */
+  #smooth-wrapper {
+    /* Ensure the wrapper takes full height for proper scroll calculation */
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  #smooth-content {
+    /* Allow content to flow naturally while ScrollSmoother handles the smooth scrolling */
+    will-change: transform;
   }
 
   nav {
